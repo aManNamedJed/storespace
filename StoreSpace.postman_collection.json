@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Darth Vader\",\n\t\"email\": \"darth@deathstar.com\",\n\t\"phone\": \"3030300303\",\n\t\"password\": \"testing123!\"\n}",
+							"raw": "{\n\t\"first_name\": \"Darth\",\n\t\"last_name\": \"Vader\",\n\t\"email\": \"darth@deathstar.com\",\n\t\"phone\": \"3030300303\",\n\t\"password\": \"testing123!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -305,7 +305,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Joe Dirt\",\n\t\"email\": \"joe@dirt.com\",\n\t\"phone\": \"3030300303\",\n\t\"password\": \"testing123!\"\n}",
+							"raw": "{\n\t\"first_name\": \"Joe\",\n\t\"last_name\": \"Dirt\",\n\t\"email\": \"joe@dirt.com\",\n\t\"phone\": \"3030300303\",\n\t\"password\": \"testing123!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
