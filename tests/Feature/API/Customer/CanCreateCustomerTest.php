@@ -19,11 +19,11 @@ class CanCreateCustomerTest extends TestCase
     public function testAPICanCreateCustomer()
     {
         $response = $this->json('POST', '/api/customers', [
-            'name' => 'Darth Vader',
+            'first_name' => 'Darth',
+            'last_name' => 'Vader',
             'email' => 'darth@deathstar.com',
             'password' => Hash::make('password'),
             'phone' => $this->faker->phoneNumber,
-            'role' => 'customer',
         ]);
 
         $response

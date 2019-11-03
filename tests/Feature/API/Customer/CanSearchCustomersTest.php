@@ -25,7 +25,7 @@ class CanSearchCustomersTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonFragment([
-                'name' => $customer->name,
+                'first_name' => $customer->first_name,
             ]);
     }
 
@@ -44,7 +44,7 @@ class CanSearchCustomersTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonFragment([
-                'name' => $customer->name,
+                'first_name' => $customer->first_name,
             ]);
     }
 
@@ -63,7 +63,7 @@ class CanSearchCustomersTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonFragment([
-                'name' => $customer->name,
+                'first_name' => $customer->first_name,
             ]);
     }
 }

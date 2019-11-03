@@ -69,7 +69,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/customers/7",
+							"raw": "http://localhost:8000/api/customers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -78,7 +78,7 @@
 							"path": [
 								"api",
 								"customers",
-								"7"
+								"1"
 							]
 						}
 					},
@@ -165,7 +165,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"make\": \"Geo\",\n\t\"model\": \"Metro\",\n\t\"year\": \"2002\",\n\t\"color\": \"Magenta\",\n\t\"customer_id\": 1\n}",
+							"raw": "{\n\t\"make\": \"Geo\",\n\t\"model\": \"Metro\",\n\t\"year\": \"2002\",\n\t\"color\": \"Magenta\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -173,7 +173,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/vehicles",
+							"raw": "http://localhost:8000/api/customers/9/vehicles",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -181,6 +181,8 @@
 							"port": "8000",
 							"path": [
 								"api",
+								"customers",
+								"9",
 								"vehicles"
 							]
 						}
@@ -193,7 +195,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8000/api/vehicles/101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vehicles",
+								"101"
+							]
 						}
 					},
 					"response": []
@@ -201,7 +213,7 @@
 				{
 					"name": "Update Vehicle",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"url": {
 							"raw": ""
@@ -254,7 +266,7 @@
 				{
 					"name": "Update Appointment",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"url": {
 							"raw": ""
@@ -282,10 +294,35 @@
 				{
 					"name": "Create Mechanic",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Joe Dirt\",\n\t\"email\": \"joe@dirt.com\",\n\t\"phone\": \"3030300303\",\n\t\"password\": \"testing123!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8000/api/mechanics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mechanics"
+							]
 						}
 					},
 					"response": []

@@ -14,6 +14,7 @@ class Vehicle extends Model
     protected $fillable = [
         'make', 'model', 'color', 'year', 'customer_id',
     ];
+
     /**
      * The user that owns the Vehicle
      *
@@ -23,5 +24,16 @@ class Vehicle extends Model
     public function customer()
     {
         return $this->belongsTo('App\Customer', 'customer_id');
+    }
+
+    /**
+     * The appointments for this Vehicle
+     *
+     * @access public
+     * @return mixed
+     */
+    public function appointments()
+    {
+        return $this->hasMany('App\Appointment', 'appointment_id');
     }
 }

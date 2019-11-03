@@ -18,11 +18,11 @@ class CanCreateMechanicTest extends TestCase
     public function testAPICanCreateMechanic()
     {
         $response = $this->json('POST', '/api/mechanics', [
-            'name' => 'Joe Dirt',
+            'first_name' => 'Joe',
+            'last_name' => 'Dirt',
             'email' => 'dirt@itsfrench.com',
             'password' => Hash::make('password'),
             'phone' => $this->faker->phoneNumber,
-            'role' => 'mechanic',
         ]);
 
         $response

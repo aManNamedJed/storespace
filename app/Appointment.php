@@ -33,4 +33,12 @@ class Appointment extends Model
     {
         return $this->belongsTo('App\User', 'mechanic_id');
     }
+
+    /**
+     * The vehicle assigned to this appointment
+     */
+    public function vehicle()
+    {
+        return $this->belongsTo('App\Vehicle', 'vehicle_id');
+    }
 }

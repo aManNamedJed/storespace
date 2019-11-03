@@ -24,7 +24,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 Route::post('/customers', function (Request $request) {
     try {
         $customer = App\Customer::create([
-            'name' => $request->input('name'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'password' => $request->input('password'),
@@ -56,7 +57,8 @@ Route::post('/customers', function (Request $request) {
 Route::get('/customers/search', function (Request $request) {
     try {
         $query = $request->input('query');
-        $results = App\Customer::where('name', 'like', "%$query%")
+        $results = App\Customer::where('first_name', 'like', "%$query%")
+                           ->orWhere('last_name', 'like', "%$query%")
                            ->orWhere('phone', 'like', "%$query%")
                            ->orWhere('email', 'like', "%$query%")
                            ->get();
@@ -200,7 +202,8 @@ Route::post('/appointments', function (Request $request) {
 Route::post('/mechanics', function (Request $request) {
     try {
         $mechanic = App\Mechanic::create([
-            'name' => $request->input('name'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'password' => $request->input('password'),

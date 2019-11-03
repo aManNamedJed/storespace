@@ -28,7 +28,7 @@ class CanGetVehicleTest extends TestCase
                 'id' => $vehicle->id,
             ])
             ->assertJsonFragment([
-                'name' => $customer->name,
+                'first_name' => $customer->first_name,
             ]);
     }
 }
