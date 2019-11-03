@@ -18,7 +18,6 @@ class Vehicle extends Model
     /**
      * The user that owns the Vehicle
      *
-     * @access public
      * @return mixed
      */
     public function customer()
@@ -29,7 +28,6 @@ class Vehicle extends Model
     /**
      * The appointments for this Vehicle
      *
-     * @access public
      * @return mixed
      */
     public function appointments()

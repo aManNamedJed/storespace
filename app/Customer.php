@@ -40,7 +40,6 @@ class Customer extends Authenticatable
     /**
      * The Customer's Appointments
      *
-     * @access public
      * @return mixed
      */
     public function appointments()
@@ -51,7 +50,6 @@ class Customer extends Authenticatable
     /**
      * The User's Vehicles
      *
-     * @access public
      * @return mixed
      */
     public function vehicles()

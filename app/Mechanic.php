@@ -38,9 +38,8 @@ class Mechanic extends Authenticatable
     ];
 
     /**
-     * The Customer's Appointments
+     * The Mechanic's Appointments
      *
-     * @access public
      * @return mixed
      */
     public function appointments()

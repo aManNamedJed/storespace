@@ -145,10 +145,10 @@ Route::post('/customers/{customer_id}/vehicles', function (Request $request, int
 
 /**
  * Get an existing vehicle.
- * Returns with the vehicle's customer information.
+ * Returns with the vehicle's Customer information.
  *
- * @param mixed $request Instance of Illuminate\Http\Request
- * @param int $id The ID of the vehicle
+ * @param  mixed $request Instance of Illuminate\Http\Request
+ * @param  int $id The ID of the vehicle
  * @return string JSON
  */
 Route::get('/vehicles/{vehicle_id}', function (Request $request, int $vehicle_id) {
@@ -164,7 +164,7 @@ Route::get('/vehicles/{vehicle_id}', function (Request $request, int $vehicle_id
 /**
  * Create a new appointment
  *
- * @param mixed $request Instance of Illuminate\Http\Request
+ * @param  mixed $request Instance of Illuminate\Http\Request
  * @return string JSON
  */
 Route::post('/appointments', function (Request $request) {
@@ -196,7 +196,7 @@ Route::post('/appointments', function (Request $request) {
 /**
  * Create a new mechanic
  *
- * @param mixed $request Instance of Illuminate\Http\Request
+ * @param  mixed $request Instance of Illuminate\Http\Request
  * @return string JSON
  */
 Route::post('/mechanics', function (Request $request) {

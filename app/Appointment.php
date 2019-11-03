@@ -18,7 +18,6 @@ class Appointment extends Model
     /**
      * The customer that made this appointment
      *
-     * @access public
      * @return mixed
      */
     public function customer()
@@ -28,6 +27,8 @@ class Appointment extends Model
 
     /**
      * The mechanic assigned to this appointment
+     *
+     * @return mixed
      */
     public function mechanic()
     {
@@ -36,6 +37,8 @@ class Appointment extends Model
 
     /**
      * The vehicle assigned to this appointment
+     *
+     * @return mixed
      */
     public function vehicle()
     {

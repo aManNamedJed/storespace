@@ -15,6 +15,11 @@ class Specialty extends Model
         'mechanic_id', 'type',
     ];
 
+    /**
+     * The Mechanic that owns this specialty
+     *
+     * @return mixed
+     */
     public static function mechanic()
     {
         return $this->belongsTo('App\User', 'mechanic_id');
