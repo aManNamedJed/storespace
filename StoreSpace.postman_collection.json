@@ -229,7 +229,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/appointments/101",
+							"raw": "http://localhost:8000/api/appointments/100",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -238,7 +238,7 @@
 							"path": [
 								"api",
 								"appointments",
-								"101"
+								"100"
 							]
 						}
 					},
@@ -303,7 +303,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8000/api/mechanics/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"mechanics",
+								"100"
+							]
 						}
 					},
 					"response": []
