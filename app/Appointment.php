@@ -22,7 +22,7 @@ class Appointment extends Model
      */
     public function customer()
     {
-        return $this->belongsTo('App\User', 'customer_id');
+        return $this->belongsTo('App\Customer', 'customer_id');
     }
 
     /**
@@ -32,7 +32,7 @@ class Appointment extends Model
      */
     public function mechanic()
     {
-        return $this->belongsTo('App\User', 'mechanic_id');
+        return $this->belongsTo('App\Mechanic', 'mechanic_id');
     }
 
     /**
