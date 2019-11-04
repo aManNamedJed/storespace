@@ -20,6 +20,7 @@ class CreateVehiclesTable extends Migration
             $table->string('model');
             $table->string('year');
             $table->string('color');
+            $table->longText('description');
             $table->timestamps();
         });
     }

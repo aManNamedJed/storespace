@@ -12,5 +12,6 @@ $factory->define(Vehicle::class, function (Faker $faker) {
         'year' => '2019',
         'color' => 'green',
         'customer_id' => 1,
+        'description' => $faker->paragraph(),
     ];
 });

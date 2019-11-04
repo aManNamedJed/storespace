@@ -129,6 +129,7 @@ Route::post('/customers/{customer_id}/vehicles', function (Request $request, int
             'year' => $request->input('year'),
             'color' => $request->input('color'),
             'customer_id' => $customer_id,
+            'description' => $request->input('description'),
         ]);
     } catch (QueryException $e) {
         // Missing some data
