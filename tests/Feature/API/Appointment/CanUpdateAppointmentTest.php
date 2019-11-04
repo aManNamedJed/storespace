@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class CanUpdateAppointmentTest extends TestCase
 {
-    use WithFaker, RefreshDatabase;
+    use RefreshDatabase;
 
     /**
      * Can the API update a customer?
@@ -20,7 +20,7 @@ class CanUpdateAppointmentTest extends TestCase
     {
         $appointment = factory(\App\Appointment::class)->create();
 
-        $response = $this->json('PUT', "/api/appointment/$appointment->id", [
+        $response = $this->json('PUT', "/api/appointments/$appointment->id", [
             'mechanic_id' => 5,
         ]);
 
