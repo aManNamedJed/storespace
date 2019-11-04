@@ -59,19 +59,12 @@ Route::post('/customers', function (Request $request) {
  * @return string  JSON
  */
 Route::get('/customers/search', function (Request $request) {
-    try {
-        $query = $request->input('query');
-        $results = App\Customer::where('first_name', 'like', "%$query%")
-                           ->orWhere('last_name', 'like', "%$query%")
-                           ->orWhere('phone', 'like', "%$query%")
-                           ->orWhere('email', 'like', "%$query%")
-                           ->get();
-    } catch (QueryException $e) {
-        // Missing some data
-        if( 1048 === $e->errorInfo[1] ) {
-            return response()->json(['error' => $e->errorInfo[2]], 400);
-        }
-    }
+    $query = $request->input('query');
+    $results = App\Customer::where('first_name', 'like', "%$query%")
+                       ->orWhere('last_name', 'like', "%$query%")
+                       ->orWhere('phone', 'like', "%$query%")
+                       ->orWhere('email', 'like', "%$query%")
+                       ->get();
 
     return response()->json($results, 200);
 });
