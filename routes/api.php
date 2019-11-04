@@ -63,7 +63,6 @@ Route::put('/customers/{customer_id}', function (Request $request, int $customer
     return response()->json($customer, 204);
 });
 
-
 /**
  * Search customers by name, phone, or email
  *
@@ -223,6 +222,23 @@ Route::get('/appointments/{appointment_id}', function (Request $request, int $ap
     }
 
     return response()->json($appointment, 200);
+});
+
+/**
+ * Update an existing appointment
+ *
+ * @param  mixed $request Instance of Illuminate\Http\Request
+ * @return string JSON
+ */
+Route::put('/appointments/{appointment_id}', function (Request $request, int $appointment_id) {
+    try {
+        $appointment = App\Appointment::findOrFail($appointment_id);
+        $appointment->update($request->all());
+    } catch (ModelNotFoundException $e) {
+        return response()->json([], 404);
+    }
+
+    return response()->json($appointment, 204);
 });
 
 /*
