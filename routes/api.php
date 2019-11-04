@@ -41,6 +41,10 @@ Route::post('/customers', function (Request $request) {
         }
     }
 
+    if(!$customer) {
+        return response()->json(['error' => 'There was an issue creating the customer.'], 500);
+    }
+
     return response()->json([
         'created' => true,
         'customer' => $customer,
