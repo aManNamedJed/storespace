@@ -26,7 +26,7 @@ class CanCreateVehicleTest extends TestCase
         ]);
 
         $response
-            ->assertStatus(200)
+            ->assertStatus(201)
             ->assertJson([
                 'created' => true,
             ]);

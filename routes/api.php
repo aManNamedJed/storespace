@@ -44,7 +44,7 @@ Route::post('/customers', function (Request $request) {
     return response()->json([
         'created' => true,
         'customer' => $customer,
-    ], 200);
+    ], 201);
 });
 
 
@@ -141,7 +141,7 @@ Route::post('/customers/{customer_id}/vehicles', function (Request $request, int
     return response()->json([
         'created' => true,
         'vehicle' => $vehicle,
-    ], 200);
+    ], 201);
 });
 
 /**
@@ -191,7 +191,7 @@ Route::post('/appointments', function (Request $request) {
     return response()->json([
         'created' => true,
         'appointment' => $appointment,
-    ], 200);
+    ], 201);
 });
 
 /**
@@ -227,7 +227,7 @@ Route::post('/mechanics', function (Request $request) {
     return response()->json([
         'created' => true,
         'mechanic' => $mechanic,
-    ], 200);
+    ], 201);
 });
 
 /**
