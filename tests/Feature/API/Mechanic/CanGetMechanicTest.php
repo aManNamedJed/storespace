@@ -39,6 +39,6 @@ class CanGetMechanicTest extends TestCase
         $response = $this->json('GET', '/api/mechanics/1');
 
         $response
-            ->assertStatus(204);
+            ->assertStatus(404);
     }
 }

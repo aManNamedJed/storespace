@@ -31,4 +31,18 @@ class CanGetVehicleTest extends TestCase
                 'first_name' => $customer->first_name,
             ]);
     }
+
+    /**
+     * Test that the API handles when no vehicle is found.
+     * Hits the vehicle endpoint without creating the vehicle first.
+     *
+     * @return void
+     */
+    public function testAPICanHandleNoVehicleFound()
+    {
+        $response = $this->json('GET', '/api/vehicles/1');
+
+        $response
+            ->assertStatus(404);
+    }
 }

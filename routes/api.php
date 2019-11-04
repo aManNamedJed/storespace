@@ -87,7 +87,7 @@ Route::get('/customers/{id}', function (Request $request, int $id) {
     try {
         $customer = App\Customer::where('id', $id)->with('vehicles')->with('appointments')->firstOrFail();
     } catch (ModelNotFoundException $e) {
-        return response()->json([], 204);
+        return response()->json([], 404);
     }
 
     return response()->json($customer, 200);
@@ -104,7 +104,7 @@ Route::get('/customers/{customer_id}/vehicles', function (Request $request, int 
     try {
         $customer = App\Customer::findOrFail($customer_id);
     } catch (ModelNotFoundException $e) {
-        return response()->json([], 204);
+        return response()->json([], 404);
     }
 
     if( !$customer->vehicles()->count() ) {
@@ -156,7 +156,7 @@ Route::get('/vehicles/{vehicle_id}', function (Request $request, int $vehicle_id
     try {
         $vehicle = App\Vehicle::where('id', $vehicle_id)->with('customer')->firstOrFail();
     } catch (ModelNotFoundException $e ) {
-        return response()->json([], 204);
+        return response()->json([], 404);
     }
 
     return response()->json($vehicle, 200);
@@ -241,7 +241,7 @@ Route::get('/mechanics/{id}', function (Request $request, int $id) {
     try {
         $mechanic = App\Mechanic::where('id', $id)->firstOrFail();
     } catch (ModelNotFoundException $e) {
-        return response()->json([], 204);
+        return response()->json([], 404);
     }
 
     return response()->json($mechanic, 200);

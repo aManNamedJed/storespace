@@ -39,6 +39,6 @@ class CanGetCustomerTest extends TestCase
         $response = $this->json('GET', '/api/customers/1');
 
         $response
-            ->assertStatus(204);
+            ->assertStatus(404);
     }
 }
