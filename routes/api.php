@@ -6,13 +6,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| Customers
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
 */
 
 /**
@@ -103,6 +98,12 @@ Route::get('/customers/{customer_id}/vehicles', function (Request $request, int 
     return response()->json($customer->vehicles()->get(), 200);
 });
 
+/*
+|--------------------------------------------------------------------------
+| Vehicles
+|--------------------------------------------------------------------------
+*/
+
 /**
  * Create a new vehicle
  *
@@ -151,6 +152,12 @@ Route::get('/vehicles/{vehicle_id}', function (Request $request, int $vehicle_id
     return response()->json($vehicle, 200);
 });
 
+/*
+|--------------------------------------------------------------------------
+| Appointments
+|--------------------------------------------------------------------------
+*/
+
 /**
  * Create a new appointment
  *
@@ -182,6 +189,30 @@ Route::post('/appointments', function (Request $request) {
         'appointment' => $appointment,
     ], 201);
 });
+
+/**
+ * Get an existing appointment.
+ * Returns with the vehicle's Customer information.
+ *
+ * @param  mixed $request Instance of Illuminate\Http\Request
+ * @param  int $id The ID of the vehicle
+ * @return string JSON
+ */
+Route::get('/appointments/{appointment_id}', function (Request $request, int $appointment_id) {
+    try {
+        $appointment = App\Appointment::where('id', $appointment_id)->with('customer')->firstOrFail();
+    } catch (ModelNotFoundException $e ) {
+        return response()->json([], 404);
+    }
+
+    return response()->json($appointment, 200);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Mechanics
+|--------------------------------------------------------------------------
+*/
 
 /**
  * Create a new mechanic
