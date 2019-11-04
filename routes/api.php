@@ -46,6 +46,23 @@ Route::post('/customers', function (Request $request) {
     ], 201);
 });
 
+/**
+ * Update an existing customer
+ *
+ * @param  mixed $request Instance of Illuminate\Http\Request
+ * @return string JSON
+ */
+Route::put('/customers/{customer_id}', function (Request $request, int $customer_id) {
+    try {
+        $customer = App\Customer::findOrFail($customer_id);
+        $customer->update($request->all());
+    } catch (ModelNotFoundException $e) {
+        return response()->json([], 404);
+    }
+
+    return response()->json($customer, 204);
+});
+
 
 /**
  * Search customers by name, phone, or email
