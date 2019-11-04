@@ -11,7 +11,7 @@ class CanGetMechanicTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Test that the API can retrieve mechanics by their ID
+     * Can the API get a Mechanic by their ID?
      *
      * @return void
      */
@@ -29,8 +29,7 @@ class CanGetMechanicTest extends TestCase
     }
 
     /**
-     * Test that the API handles when no mechanic is found.
-     * Hits the mechanic endpoint without creating the mechanic first.
+     * Can the API handle when no Mechanic is found?
      *
      * @return void
      */

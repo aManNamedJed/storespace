@@ -9,8 +9,9 @@ use Tests\TestCase;
 class CanCreateVehicleTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
-     * A basic feature test example.
+     * Can the API create a Vehicle?
      *
      * @return void
      */

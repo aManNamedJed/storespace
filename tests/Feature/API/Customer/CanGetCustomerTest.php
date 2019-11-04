@@ -11,7 +11,7 @@ class CanGetCustomerTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Test that the API can retrieve customers by their ID
+     * Can the API get a customer by ID?
      *
      * @return void
      */

@@ -10,6 +10,7 @@ use Tests\TestCase;
 class CanCreateMechanicTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
+
     /**
      * Can the API create a mechanic?
      *

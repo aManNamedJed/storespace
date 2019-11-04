@@ -69,10 +69,6 @@ Route::get('/customers/search', function (Request $request) {
         }
     }
 
-    if(!$results->count()) {
-        return response()->json([], 204);
-    }
-
     return response()->json($results, 200);
 });
 
@@ -105,10 +101,6 @@ Route::get('/customers/{customer_id}/vehicles', function (Request $request, int 
         $customer = App\Customer::findOrFail($customer_id);
     } catch (ModelNotFoundException $e) {
         return response()->json([], 404);
-    }
-
-    if( !$customer->vehicles()->count() ) {
-        return response()->json([], 204);
     }
 
     return response()->json($customer->vehicles()->get(), 200);

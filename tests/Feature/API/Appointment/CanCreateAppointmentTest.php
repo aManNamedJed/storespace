@@ -12,7 +12,7 @@ class CanCreateAppointmentTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A basic feature test example.
+     * Can the API create an appointment?
      *
      * @return void
      */

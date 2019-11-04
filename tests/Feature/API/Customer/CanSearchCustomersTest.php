@@ -11,7 +11,7 @@ class CanSearchCustomersTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Tests that the API can search customers by name
+     * Can the API search for Customers by their name?
      *
      * @return void
      */
@@ -19,18 +19,18 @@ class CanSearchCustomersTest extends TestCase
     {
         $customer = factory(\App\Customer::class)->create();
         $response = $this->json('GET', '/api/customers/search', [
-            'query' => $customer->name,
+            'query' => $customer->last_name,
         ]);
 
         $response
             ->assertStatus(200)
             ->assertJsonFragment([
-                'first_name' => $customer->first_name,
+                'last_name' => $customer->last_name,
             ]);
     }
 
     /**
-     * Tests that the API can search customers by phone
+     * Can the API search for Customers by their email?
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class CanSearchCustomersTest extends TestCase
     }
 
     /**
-     * Tests that the API can search customers by email
+     * Can the API search for Customers by the phone number?
      *
      * @return void
      */

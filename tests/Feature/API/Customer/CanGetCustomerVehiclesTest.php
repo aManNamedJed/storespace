@@ -11,7 +11,7 @@ class CanGetCustomerVehiclesTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Test that the API can retrieve customers by their ID
+     * Can the API get a Customer's Vehicles?
      *
      * @return void
      */

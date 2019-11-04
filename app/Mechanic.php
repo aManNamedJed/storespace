@@ -48,10 +48,8 @@ class Mechanic extends Authenticatable
     }
 
     /**
-     * The User's Specialties.
-     * Only applies to mechanics
+     * The Mechanic's Specialties.
      *
-     * @access public
      * @return mixed
      */
     public function specialties()
