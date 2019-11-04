@@ -1,16 +1,11 @@
 <?php
-
 namespace App;
-
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
-class Mechanic extends User
+class User extends Authenticatable
 {
     use Notifiable;
-
-    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +13,7 @@ class Mechanic extends User
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name', 'email', 'password', 'phone',
+        'first_name', 'last_name', 'email', 'password', 'phone',
     ];
 
     /**
@@ -38,24 +33,4 @@ class Mechanic extends User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    /**
-     * The Mechanic's Appointments
-     *
-     * @return mixed
-     */
-    public function appointments()
-    {
-        return $this->hasMany('App\Appointment', 'mechanic_id');
-    }
-
-    /**
-     * The Mechanic's Specialties.
-     *
-     * @return mixed
-     */
-    public function specialties()
-    {
-        return $this->hasMany('App\Speciality');
-    }
 }
